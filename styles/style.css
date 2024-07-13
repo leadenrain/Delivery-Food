@@ -54,6 +54,12 @@ ol {
   }
 }
 
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .page {
   font-family: RobotoFlex;
   max-width: 1440px;
@@ -103,28 +109,34 @@ ol {
 .content {
   background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
   padding: 0 120px;
+  flex-grow: 1;
 }
 
 .hero {
   background-color: rgba(255, 241, 184, 1);
   background-image: url(/images/pizza.png);
+  background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-  height: 300px;
+  padding: 68px;
   border-radius: 10px;
   display: flex;
   align-items: center;  
 }
 
 .hero__txt {
-  height: 163px;
-  width: 545px;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
   line-height: 1.17;
-  padding-inline-start: 71px;
   color: rgba(48, 44, 52, 1);
+}
+
+@media (max-width: 1038px) {
+  .hero__txt{
+    max-width: 100%;
+  }
 }
 
 .txt-title {
@@ -142,21 +154,20 @@ ol {
   margin-block-start: 8px;
 }
 
-.hz {
+.restaurants__header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   height: 134px;
   align-items: center;
 }
 
-.hz__title {
+.restaurants__header-title {
   font-size: 36px;
   font-weight: 700;
 }
 
 .site-search {
-  width: 306px;
+  min-width: 306px;
   position: relative;
   display: flex;
   align-items: center;
@@ -268,20 +279,21 @@ ol {
   padding: 0 120px;
   min-height: 157px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px;
 }
 
-.footer__content {
-  display: flex;
-  align-items: center;
-  gap: 36px;
+.menu {
+  flex-grow: 1;
 }
 
 .menu__list {
   display: flex;
   flex-direction: row;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .socials__list {
